@@ -16,4 +16,4 @@ Use event propagation to ensure that clicking on a button doesn’t trigger the 
 
 Bonus:
 Add more buttons with different colors and modify the code to handle these new buttons dynamically.
-Add an undo button that allows the user to revert the background color to the previous state 
+Add an undo button that allows the user to revert the background color to the previous state. 
