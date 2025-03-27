@@ -1,0 +1,93 @@
+<!-- 
+Background Colour Change Button Challenge 
+
+Create a simple web page with two buttons, 
+each with a different background color. When a button is clicked, 
+the background color of the page should change to the color of the clicked button. 
+Additionally, if the user clicks anywhere on the page outside of the buttons, the background color should return to its original color.
+
+Requirements:
+
+Use event listeners to detect when a button is clicked and when the page is clicked outside of the buttons.
+Use event propagation to ensure that clicking on a button doesn’t trigger the click event for the page.
+
+Bonus:
+Add more buttons with different colors and modify the code to handle these new buttons dynamically.
+Add an undo button that allows the user to revert the background color to the previous state 
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+ </head>
+ <body>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-1 mt-1" id="btn1">Blue</button>
+    <button class="bg-black hover:bg-black text-white font-bold py-2 px-4 rounded ml-1 mt-1" id="btn2">Black</button>    
+    <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-1 mt-1" id="btn3">Purple</button>    
+    <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded ml-1 mt-1" id="btn4">Orange</button>   
+    <button class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-1 mt-1" id="btn5">Undo</button> 
+
+<script>
+
+window.addEventListener("click", (e)=> 
+    /* 
+    Deals with the logic of when the buttons are clicked and to what color the 
+    background should change to. E.g blue button will change 
+    the background color to blue 
+    */
+    
+    {
+    switch(e.target)
+    // case depending on the target of where the event is happening 
+    {
+    case btn1: 
+        console.log(e)
+        document.body.style.backgroundColor = "blue"
+    break;
+    case btn2:
+        console.log(e)
+        document.body.style.backgroundColor = "black"
+    break;
+    case btn3: 
+        console.log(e)
+        document.body.style.backgroundColor = "purple"
+    break;
+    case btn4:
+        console.log(e)
+        document.body.style.backgroundColor = "orange"
+    break;
+    case btn5:
+    /* 
+    Deals with the logic of the undo button in which revert the background color to a 
+    particular state depending on which color the background is. E.g pressing undo 
+    when backrgound is purple will change the backgound color to orange etc. 
+    */
+        console.log(e)
+        switch(document.body.style.backgroundColor){
+        case "blue": 
+            document.body.style.backgroundColor = "orange"
+            break;
+        case "black": 
+            document.body.style.backgroundColor = "blue"
+            break;
+        case "purple": 
+            document.body.style.backgroundColor = "black"
+            break;
+        case "orange": 
+            document.body.style.backgroundColor = "purple"
+            break;
+        }
+        break;
+    default:
+        document.body.style.backgroundColor = "white"
+}
+})
+
+
+</script> 
+</body>
+ </html>
