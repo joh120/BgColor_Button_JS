@@ -1,6 +1,8 @@
 # BgColor_Button_JS
 
-Background Colour Change Button Challenge 
+Background Colour Change Button Challenge
+
+Description:
 
 Create a simple web page with two buttons, 
 each with a different background color. When a button is clicked, 
